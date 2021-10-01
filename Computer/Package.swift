@@ -14,13 +14,18 @@ let package = Package(
     targets: [
         .target(
             name: "Computer",
-            dependencies: []),
+            dependencies: [
+                "Hardware",
+                "Software"
+            ]),
         .target(
             name: "Hardware",
             dependencies: []),
         .target(
             name: "Software",
             dependencies: []),
+        
+        // Test
         .testTarget(
             name: "ComputerTests",
             dependencies: ["Computer"]),
