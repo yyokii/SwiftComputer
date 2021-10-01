@@ -29,5 +29,8 @@ let package = Package(
         .testTarget(
             name: "ComputerTests",
             dependencies: ["Computer"]),
+        .testTarget(
+            name: "HardwareTests",
+            dependencies: ["Hardware"]),
     ]
 )
