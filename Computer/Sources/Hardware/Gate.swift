@@ -5,32 +5,42 @@
 //  Created by Higashihara Yoki on 2021/10/01.
 //
 
-public func nand(a: Bool, b: Bool) -> Bool {
-    !(a && b)
+public protocol GateProtocol {
+    static func nand(a: Bit, b: Bit) -> Bit
+    static func not(a: Bit) -> Bit
+    static func and(a: Bit, b: Bit) -> Bit
+    static func or(a: Bit, b: Bit) -> Bit
+    static func xor(a: Bit, b: Bit) -> Bit
+    static func mux(a: Bit, b: Bit, sel: Bit) -> Bit
+    static func dmux(a: Bit, sel: Bit) -> [Bit]
 }
 
-public func not(a: Bool) -> Bool {
-    nand(a: a, b: a)
+public struct Gate {
+    public static func nand(a: Bit, b: Bit) -> Bit {
+        .init(!(a.value && b.value))
+    }
+
+    public static func not(a: Bit) -> Bit {
+        nand(a: a, b: a)
+    }
+
+    public static func and(a: Bit, b: Bit) -> Bit {
+        .init(!nand(a: a, b: b).value)
+    }
+
+    public static func or(a: Bit, b: Bit) -> Bit {
+        nand(a: not(a: a), b: not(a: b))
+    }
+
+    public static func xor(a: Bit, b: Bit) -> Bit {
+        or(a: and(a: not(a: a), b: b), b: and(a: a, b: not(a: b)))
+    }
+
+    public static func mux(a: Bit, b: Bit, sel: Bit) -> Bit {
+        or(a: and(a: a, b: not(a: sel)), b: and(a: b, b: sel))
+    }
+
+    public static func dmux(a: Bit, sel: Bit) -> [Bit] {
+        [and(a: a, b: not(a: sel)), and(a: a, b: sel)]
+    }
 }
-
-public func and(a: Bool, b: Bool) -> Bool {
-    !nand(a: a, b: b)
-}
-
-public func or(a: Bool, b: Bool) -> Bool {
-    nand(a: not(a: a), b: not(a: b))
-}
-
-public func xor(a: Bool, b: Bool) -> Bool {
-    or(a: and(a: not(a: a), b: b), b: and(a: a, b: not(a: b)))
-}
-
-public func mux(a: Bool, b: Bool, sel: Bool) -> Bool {
-    or(a: and(a: a, b: not(a: sel)), b: and(a: b, b: sel))
-}
-
-public func dmux(a: Bool, sel: Bool) -> [Bool] {
-    [and(a: a, b: not(a: sel)), and(a: a, b: sel)]
-}
-
-

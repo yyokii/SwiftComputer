@@ -6,35 +6,38 @@
 //
 
 public struct AdderOutput {
-    let sum: Bool
-    let carry: Bool
+    let sum: Bit
+    let carry: Bit
 }
 
-public protocol AdderProtocol {}
+public protocol AdderProtocol {
+    static func halfAdder(a: Bit, b: Bit) -> AdderOutput
+    static func fullAdder(a: Bit, b: Bit, c: Bit) -> AdderOutput
+}
 
 public struct Adder: AdderProtocol {
-    public func halfAdder(a: Bool, b: Bool) -> AdderOutput {
-        .init(sum: xor(a: a, b: b),
-              carry: and(a: a, b: b))
+    public static func halfAdder(a: Bit, b: Bit) -> AdderOutput {
+        .init(sum: Gate.xor(a: a, b: b),
+              carry: Gate.and(a: a, b: b))
     }
-
-    public func fullAdder(a: Bool, b: Bool, c: Bool) -> AdderOutput {
-        let tmpSum = xor(a: a, b: b)
+    
+    public static func fullAdder(a: Bit, b: Bit, c: Bit) -> AdderOutput {
+        let tmpSum = Gate.xor(a: a, b: b)
         
-        return .init(sum: xor(a: xor(a: a, b: b), b: c),
-              carry: or(a: and(a: a, b: b), b: and(a: tmpSum, b: c)))
+        return .init(sum: Gate.xor(a: Gate.xor(a: a, b: b), b: c),
+                     carry: Gate.or(a: Gate.and(a: a, b: b), b: Gate.and(a: tmpSum, b: c)))
     }
-
-    public func add16(a: [Bool], b: [Bool]) {
-        var res: [Bool] = []
-        
-        var tempSum: Bool = halfAdder(a: a[0], b: b[0]).sum
-        res.append(tempSum)
-        
-        for index in 1..<16 {
-            let sum = fullAdder(a: a[index], b: b[index], c: tempSum).sum
-            res.append(sum)
-            tempSum = sum
-        }
-    }
+    
+    //    public func add16(a: Bit16, b: Bit16) {
+    //        var res: [Bool] = []
+    //
+    //        var tempSum: Bool = halfAdder(a: a[0], b: b[0]).sum
+    //        res.append(tempSum)
+    //
+    //        for index in 1..<16 {
+    //            let sum = fullAdder(a: a[index], b: b[index], c: tempSum).sum
+    //            res.append(sum)
+    //            tempSum = sum
+    //        }
+    //    }
 }

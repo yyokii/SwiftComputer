@@ -12,37 +12,37 @@ final class GateTests: XCTestCase {
     
     func testNand() {
         XCTContext.runActivity(named: "a=0, b=0") { _ in
-            let a: Bool = false
-            let b: Bool = false
-            let result = nand(a: a, b: b)
-            let expectation: Bool = true
+            let a: Bit = .init(false)
+            let b: Bit = .init(false)
+            let result = Gate.nand(a: a, b: b)
+            let expectation: Bit = .init(true)
                         
             XCTAssertEqual(result, expectation)
         }
         
         XCTContext.runActivity(named: "a=0, b=1") { _ in
-            let a: Bool = false
-            let b: Bool = true
-            let result = nand(a: a, b: b)
-            let expectation: Bool = true
+            let a: Bit = .init(false)
+            let b: Bit = .init(true)
+            let result = Gate.nand(a: a, b: b)
+            let expectation: Bit = .init(true)
                         
             XCTAssertEqual(result, expectation)
         }
         
         XCTContext.runActivity(named: "a=1, b=0") { _ in
-            let a: Bool = true
-            let b: Bool = false
-            let result = nand(a: a, b: b)
-            let expectation: Bool = true
+            let a: Bit = .init(true)
+            let b: Bit = .init(false)
+            let result = Gate.nand(a: a, b: b)
+            let expectation: Bit = .init(true)
                         
             XCTAssertEqual(result, expectation)
         }
         
         XCTContext.runActivity(named: "a=1, b=1") { _ in
-            let a: Bool = true
-            let b: Bool = true
-            let result = nand(a: a, b: b)
-            let expectation: Bool = false
+            let a: Bit = .init(true)
+            let b: Bit = .init(true)
+            let result = Gate.nand(a: a, b: b)
+            let expectation: Bit = .init(false)
                         
             XCTAssertEqual(result, expectation)
         }
@@ -50,17 +50,17 @@ final class GateTests: XCTestCase {
     
     func testNot() {
         XCTContext.runActivity(named: "a=0") { _ in
-            let a: Bool = false
-            let result = not(a: a)
-            let expectation: Bool = true
+            let a: Bit = .init(false)
+            let result = Gate.not(a: a)
+            let expectation: Bit = .init(true)
                         
             XCTAssertEqual(result, expectation)
         }
         
         XCTContext.runActivity(named: "a=1") { _ in
-            let a: Bool = true
-            let result = not(a: a)
-            let expectation: Bool = false
+            let a: Bit = .init(true)
+            let result = Gate.not(a: a)
+            let expectation: Bit = .init(false)
                         
             XCTAssertEqual(result, expectation)
         }
@@ -68,37 +68,37 @@ final class GateTests: XCTestCase {
     
     func testAnd() {
         XCTContext.runActivity(named: "a=0, b=0") { _ in
-            let a: Bool = false
-            let b: Bool = false
-            let result = and(a: a, b: b)
-            let expectation: Bool = false
+            let a: Bit = .init(false)
+            let b: Bit = .init(false)
+            let result = Gate.and(a: a, b: b)
+            let expectation: Bit = .init(false)
                         
             XCTAssertEqual(result, expectation)
         }
         
         XCTContext.runActivity(named: "a=0, b=1") { _ in
-            let a: Bool = false
-            let b: Bool = true
-            let result = and(a: a, b: b)
-            let expectation: Bool = false
+            let a: Bit = .init(false)
+            let b: Bit = .init(true)
+            let result = Gate.and(a: a, b: b)
+            let expectation: Bit = .init(false)
                         
             XCTAssertEqual(result, expectation)
         }
         
         XCTContext.runActivity(named: "a=1, b=0") { _ in
-            let a: Bool = true
-            let b: Bool = false
-            let result = and(a: a, b: b)
-            let expectation: Bool = false
+            let a: Bit = .init(true)
+            let b: Bit = .init(false)
+            let result = Gate.and(a: a, b: b)
+            let expectation: Bit = .init(false)
                         
             XCTAssertEqual(result, expectation)
         }
         
         XCTContext.runActivity(named: "a=1, b=1") { _ in
-            let a: Bool = true
-            let b: Bool = true
-            let result = and(a: a, b: b)
-            let expectation: Bool = true
+            let a: Bit = .init(true)
+            let b: Bit = .init(true)
+            let result = Gate.and(a: a, b: b)
+            let expectation: Bit = .init(true)
                         
             XCTAssertEqual(result, expectation)
         }
@@ -106,37 +106,37 @@ final class GateTests: XCTestCase {
     
     func testOr() {
         XCTContext.runActivity(named: "a=0, b=0") { _ in
-            let a: Bool = false
-            let b: Bool = false
-            let result = or(a: a, b: b)
-            let expectation: Bool = false
+            let a: Bit = .init(false)
+            let b: Bit = .init(false)
+            let result = Gate.or(a: a, b: b)
+            let expectation: Bit = .init(false)
                         
             XCTAssertEqual(result, expectation)
         }
         
         XCTContext.runActivity(named: "a=0, b=1") { _ in
-            let a: Bool = false
-            let b: Bool = true
-            let result = or(a: a, b: b)
-            let expectation: Bool = true
+            let a: Bit = .init(false)
+            let b: Bit = .init(true)
+            let result = Gate.or(a: a, b: b)
+            let expectation: Bit = .init(true)
                         
             XCTAssertEqual(result, expectation)
         }
         
         XCTContext.runActivity(named: "a=1, b=0") { _ in
-            let a: Bool = true
-            let b: Bool = false
-            let result = or(a: a, b: b)
-            let expectation: Bool = true
+            let a: Bit = .init(true)
+            let b: Bit = .init(false)
+            let result = Gate.or(a: a, b: b)
+            let expectation: Bit = .init(true)
                         
             XCTAssertEqual(result, expectation)
         }
         
         XCTContext.runActivity(named: "a=1, b=1") { _ in
-            let a: Bool = true
-            let b: Bool = true
-            let result = or(a: a, b: b)
-            let expectation: Bool = true
+            let a: Bit = .init(true)
+            let b: Bit = .init(true)
+            let result = Gate.or(a: a, b: b)
+            let expectation: Bit = .init(true)
                         
             XCTAssertEqual(result, expectation)
         }
@@ -144,37 +144,37 @@ final class GateTests: XCTestCase {
     
     func testXor() {
         XCTContext.runActivity(named: "a=0, b=0") { _ in
-            let a: Bool = false
-            let b: Bool = false
-            let result = xor(a: a, b: b)
-            let expectation: Bool = false
+            let a: Bit = .init(false)
+            let b: Bit = .init(false)
+            let result = Gate.xor(a: a, b: b)
+            let expectation: Bit = .init(false)
                         
             XCTAssertEqual(result, expectation)
         }
         
         XCTContext.runActivity(named: "a=0, b=1") { _ in
-            let a: Bool = false
-            let b: Bool = true
-            let result = xor(a: a, b: b)
-            let expectation: Bool = true
+            let a: Bit = .init(false)
+            let b: Bit = .init(true)
+            let result = Gate.xor(a: a, b: b)
+            let expectation: Bit = .init(true)
                         
             XCTAssertEqual(result, expectation)
         }
         
         XCTContext.runActivity(named: "a=1, b=0") { _ in
-            let a: Bool = true
-            let b: Bool = false
-            let result = xor(a: a, b: b)
-            let expectation: Bool = true
+            let a: Bit = .init(true)
+            let b: Bit = .init(false)
+            let result = Gate.xor(a: a, b: b)
+            let expectation: Bit = .init(true)
                         
             XCTAssertEqual(result, expectation)
         }
         
         XCTContext.runActivity(named: "a=1, b=1") { _ in
-            let a: Bool = true
-            let b: Bool = true
-            let result = xor(a: a, b: b)
-            let expectation: Bool = false
+            let a: Bit = .init(true)
+            let b: Bit = .init(true)
+            let result = Gate.xor(a: a, b: b)
+            let expectation: Bit = .init(false)
                         
             XCTAssertEqual(result, expectation)
         }
@@ -182,81 +182,81 @@ final class GateTests: XCTestCase {
     
     func testMux() {
         XCTContext.runActivity(named: "a=0, b=0, sel=0") { _ in
-            let a: Bool = false
-            let b: Bool = false
-            let sel: Bool = false
-            let result = mux(a: a, b: b, sel: sel)
-            let expectation: Bool = false
+            let a: Bit = .init(false)
+            let b: Bit = .init(false)
+            let sel: Bit = .init(false)
+            let result = Gate.mux(a: a, b: b, sel: sel)
+            let expectation: Bit = .init(false)
                         
             XCTAssertEqual(result, expectation)
         }
         
         XCTContext.runActivity(named: "a=0, b=1, sel=0") { _ in
-            let a: Bool = false
-            let b: Bool = true
-            let sel: Bool = false
-            let result = mux(a: a, b: b, sel: sel)
-            let expectation: Bool = false
+            let a: Bit = .init(false)
+            let b: Bit = .init(true)
+            let sel: Bit = .init(false)
+            let result = Gate.mux(a: a, b: b, sel: sel)
+            let expectation: Bit = .init(false)
                         
             XCTAssertEqual(result, expectation)
         }
         
         XCTContext.runActivity(named: "a=1, b=0, sel=0") { _ in
-            let a: Bool = true
-            let b: Bool = false
-            let sel: Bool = false
-            let result = mux(a: a, b: b, sel: sel)
-            let expectation: Bool = true
+            let a: Bit = .init(true)
+            let b: Bit = .init(false)
+            let sel: Bit = .init(false)
+            let result = Gate.mux(a: a, b: b, sel: sel)
+            let expectation: Bit = .init(true)
                         
             XCTAssertEqual(result, expectation)
         }
         
         XCTContext.runActivity(named: "a=1, b=1, sel=0") { _ in
-            let a: Bool = true
-            let b: Bool = true
-            let sel: Bool = false
-            let result = mux(a: a, b: b, sel: sel)
-            let expectation: Bool = true
+            let a: Bit = .init(true)
+            let b: Bit = .init(true)
+            let sel: Bit = .init(false)
+            let result = Gate.mux(a: a, b: b, sel: sel)
+            let expectation: Bit = .init(true)
                         
             XCTAssertEqual(result, expectation)
         }
         
         XCTContext.runActivity(named: "a=0, b=0, sel=1") { _ in
-            let a: Bool = false
-            let b: Bool = false
-            let sel: Bool = true
-            let result = mux(a: a, b: b, sel: sel)
-            let expectation: Bool = false
+            let a: Bit = .init(false)
+            let b: Bit = .init(false)
+            let sel: Bit = .init(true)
+            let result = Gate.mux(a: a, b: b, sel: sel)
+            let expectation: Bit = .init(false)
                         
             XCTAssertEqual(result, expectation)
         }
         
         XCTContext.runActivity(named: "a=0, b=1, sel=1") { _ in
-            let a: Bool = false
-            let b: Bool = true
-            let sel: Bool = true
-            let result = mux(a: a, b: b, sel: sel)
-            let expectation: Bool = true
+            let a: Bit = .init(false)
+            let b: Bit = .init(true)
+            let sel: Bit = .init(true)
+            let result = Gate.mux(a: a, b: b, sel: sel)
+            let expectation: Bit = .init(true)
                         
             XCTAssertEqual(result, expectation)
         }
         
         XCTContext.runActivity(named: "a=1, b=0, sel=1") { _ in
-            let a: Bool = true
-            let b: Bool = false
-            let sel: Bool = true
-            let result = mux(a: a, b: b, sel: sel)
-            let expectation: Bool = false
+            let a: Bit = .init(true)
+            let b: Bit = .init(false)
+            let sel: Bit = .init(true)
+            let result = Gate.mux(a: a, b: b, sel: sel)
+            let expectation: Bit = .init(false)
                         
             XCTAssertEqual(result, expectation)
         }
         
         XCTContext.runActivity(named: "a=1, b=1, sel=1") { _ in
-            let a: Bool = true
-            let b: Bool = true
-            let sel: Bool = true
-            let result = mux(a: a, b: b, sel: sel)
-            let expectation: Bool = true
+            let a: Bit = .init(true)
+            let b: Bit = .init(true)
+            let sel: Bit = .init(true)
+            let result = Gate.mux(a: a, b: b, sel: sel)
+            let expectation: Bit = .init(true)
                         
             XCTAssertEqual(result, expectation)
         }
@@ -264,37 +264,37 @@ final class GateTests: XCTestCase {
     
     func testDmux() {
         XCTContext.runActivity(named: "a=0, sel=0") { _ in
-            let a: Bool = false
-            let sel: Bool = false
-            let result = dmux(a: a, sel: sel)
-            let expectation: [Bool] = [a, false]
+            let a: Bit = .init(false)
+            let sel: Bit = .init(false)
+            let result = Gate.dmux(a: a, sel: sel)
+            let expectation: [Bit] = [a, .init(false)]
                         
             XCTAssertEqual(result, expectation)
         }
         
         XCTContext.runActivity(named: "a=0, sel=1") { _ in
-            let a: Bool = false
-            let sel: Bool = true
-            let result = dmux(a: a, sel: sel)
-            let expectation: [Bool] = [false, a]
+            let a: Bit = .init(false)
+            let sel: Bit = .init(true)
+            let result = Gate.dmux(a: a, sel: sel)
+            let expectation: [Bit] = [.init(false), a]
                         
             XCTAssertEqual(result, expectation)
         }
         
         XCTContext.runActivity(named: "a=1, sel=0") { _ in
-            let a: Bool = true
-            let sel: Bool = false
-            let result = dmux(a: a, sel: sel)
-            let expectation: [Bool] = [a, false]
+            let a: Bit = .init(true)
+            let sel: Bit = .init(false)
+            let result = Gate.dmux(a: a, sel: sel)
+            let expectation: [Bit] = [a, .init(false)]
                         
             XCTAssertEqual(result, expectation)
         }
         
         XCTContext.runActivity(named: "a=1, sel=1") { _ in
-            let a: Bool = true
-            let sel: Bool = true
-            let result = dmux(a: a, sel: sel)
-            let expectation: [Bool] = [false, a]
+            let a: Bit = .init(true)
+            let sel: Bit = .init(true)
+            let result = Gate.dmux(a: a, sel: sel)
+            let expectation: [Bit] = [.init(false), a]
                         
             XCTAssertEqual(result, expectation)
         }
