@@ -8,7 +8,7 @@
 import XCTest
 @testable import Hardware
 
-final class ComputerTests: XCTestCase {
+final class GateTests: XCTestCase {
     
     func testNand() {
         XCTContext.runActivity(named: "a=0, b=0") { _ in
