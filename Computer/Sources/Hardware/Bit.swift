@@ -5,6 +5,9 @@
 //  Created by Higashihara Yoki on 2021/10/02.
 //
 
+/*
+ Equatable compliant for testing
+ */
 
 public struct Bit: Equatable {
     let value: Bool
@@ -104,18 +107,18 @@ public struct Bit16: Equatable {
 
 
 extension Bit16 {
-    static let one: Self = .init((Bit.init(true), Bit.init(false), Bit.init(false), Bit.init(false), Bit.init(false),
-                                  Bit.init(false), Bit.init(false), Bit.init(false), Bit.init(false), Bit.init(false),
-                                  Bit.init(false), Bit.init(false), Bit.init(false), Bit.init(false), Bit.init(false),
-                                  Bit.init(false)))
+    static let one: Self = .init((Bit.init(true), Bit.init(false), Bit.init(false), Bit.init(false),
+                                  Bit.init(false),Bit.init(false), Bit.init(false), Bit.init(false),
+                                  Bit.init(false), Bit.init(false),Bit.init(false), Bit.init(false),
+                                  Bit.init(false), Bit.init(false), Bit.init(false),Bit.init(false)))
     
-    static let allOne: Self = .init((Bit.init(true), Bit.init(true), Bit.init(true), Bit.init(true), Bit.init(true),
-                                     Bit.init(true), Bit.init(true), Bit.init(true), Bit.init(true), Bit.init(true),
-                                     Bit.init(true), Bit.init(true), Bit.init(true), Bit.init(true), Bit.init(true),
-                                     Bit.init(true)))
+    static let allOne: Self = .init((Bit.init(true), Bit.init(true), Bit.init(true), Bit.init(true),
+                                     Bit.init(true),Bit.init(true), Bit.init(true), Bit.init(true),
+                                     Bit.init(true), Bit.init(true),Bit.init(true), Bit.init(true),
+                                     Bit.init(true), Bit.init(true), Bit.init(true),Bit.init(true)))
     
-    static let allZero: Self = .init((Bit.init(false), Bit.init(false), Bit.init(false), Bit.init(false), Bit.init(false),
-                                      Bit.init(false), Bit.init(false), Bit.init(false), Bit.init(false), Bit.init(false),
-                                      Bit.init(false), Bit.init(false), Bit.init(false), Bit.init(false), Bit.init(false),
-                                      Bit.init(false)))
+    static let allZero: Self = .init((Bit.init(false), Bit.init(false), Bit.init(false), Bit.init(false),
+                                      Bit.init(false),Bit.init(false), Bit.init(false), Bit.init(false),
+                                      Bit.init(false), Bit.init(false),Bit.init(false), Bit.init(false),
+                                      Bit.init(false), Bit.init(false), Bit.init(false),Bit.init(false)))
 }
