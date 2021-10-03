@@ -81,6 +81,21 @@ public struct Bit8: Equatable {
 public struct Bit16: Equatable {
     var values: (Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit)
     
+    var isZero: Bit {
+        Gate.not(a: Gate.or(a: Gate.or(a: values.0, b: values.1),
+                            b: Gate.or(a: Gate.or(a: values.2, b: values.3),
+                                       b: Gate.or(a: Gate.or(a: values.4, b: values.5),
+                                                  b: Gate.or(a: Gate.or(a: values.6, b: values.7),
+                                                             b: Gate.or(a: Gate.or(a: values.8, b: values.9),
+                                                                        b: Gate.or(a: Gate.or(a: values.10, b: values.11),
+                                                                                   b: Gate.or(a: Gate.or(a: values.12, b: values.13),
+                                                                                              b: Gate.or(a: values.14, b: values.15)))))))))
+    }
+    
+    var isNegative: Bit {
+        values.15
+    }
+    
     public init(_ bits: (Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit)) {
         values = bits
     }
