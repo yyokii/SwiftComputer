@@ -9,7 +9,9 @@
  Equatable compliant for testing
  */
 
-public struct Bit: Equatable {
+public protocol BitRepresentable {}
+
+public struct Bit: BitRepresentable, Equatable {
     let value: Bool
     
     public init(_ bit: Bool) {
@@ -17,7 +19,7 @@ public struct Bit: Equatable {
     }
 }
 
-public struct Bit2: Equatable {
+public struct Bit2: BitRepresentable, Equatable {
     var values: (Bit, Bit)
     
     public init(_ bits: (Bit, Bit)) {
@@ -30,7 +32,7 @@ public struct Bit2: Equatable {
     }
 }
 
-public struct Bit3: Equatable {
+public struct Bit3: BitRepresentable, Equatable {
     var values: (Bit, Bit, Bit)
     
     public init(_ bits: (Bit, Bit, Bit)) {
@@ -44,7 +46,7 @@ public struct Bit3: Equatable {
     }
 }
 
-public struct Bit4: Equatable {
+public struct Bit4: BitRepresentable, Equatable {
     var values: (Bit, Bit, Bit, Bit)
     
     public init(_ bits: (Bit, Bit, Bit, Bit)) {
@@ -59,7 +61,7 @@ public struct Bit4: Equatable {
     }
 }
 
-public struct Bit8: Equatable {
+public struct Bit8: BitRepresentable, Equatable {
     var values: (Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit)
     
     public init(_ bits: (Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit)) {
@@ -78,7 +80,7 @@ public struct Bit8: Equatable {
     }
 }
 
-public struct Bit16: Equatable {
+public struct Bit16: BitRepresentable, Equatable {
     var values: (Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit)
     
     var isZero: Bit {
