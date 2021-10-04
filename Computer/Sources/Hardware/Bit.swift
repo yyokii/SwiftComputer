@@ -129,12 +129,12 @@ extension Bit16 {
                                   Bit.init(false), Bit.init(false),Bit.init(false), Bit.init(false),
                                   Bit.init(false), Bit.init(false), Bit.init(false),Bit.init(false)))
     
-    static let allOne: Self = .init((Bit.init(true), Bit.init(true), Bit.init(true), Bit.init(true),
+    public static let allOne: Self = .init((Bit.init(true), Bit.init(true), Bit.init(true), Bit.init(true),
                                      Bit.init(true),Bit.init(true), Bit.init(true), Bit.init(true),
                                      Bit.init(true), Bit.init(true),Bit.init(true), Bit.init(true),
                                      Bit.init(true), Bit.init(true), Bit.init(true),Bit.init(true)))
     
-    static let allZero: Self = .init((Bit.init(false), Bit.init(false), Bit.init(false), Bit.init(false),
+    public static let allZero: Self = .init((Bit.init(false), Bit.init(false), Bit.init(false), Bit.init(false),
                                       Bit.init(false),Bit.init(false), Bit.init(false), Bit.init(false),
                                       Bit.init(false), Bit.init(false),Bit.init(false), Bit.init(false),
                                       Bit.init(false), Bit.init(false), Bit.init(false),Bit.init(false)))
