@@ -14,15 +14,9 @@ protocol RegisterProtocol {
 }
 
 struct Register: RegisterProtocol {
-    var dffGate: DFF
-    var load: Bit
-    var preOut: Bit
-    
-    init(dff: DFF = DFF(.init(false)), load: Bit = .init(false), _ initialValue: Bit) {
-        dffGate = dff
-        self.load = load
-        preOut = initialValue
-    }
+    var dffGate: DFF = DFF(.init(false))
+    var load: Bit = .init(false)
+    var preOut: Bit = .init(false)
 
     mutating func output(in: Bit, load: Bit) -> Bit {
         let out = Gate.mux(a: preOut, b: dffGate.dff(`in`), sel: self.load)
@@ -35,16 +29,10 @@ struct Register: RegisterProtocol {
 }
 
 struct Register16: RegisterProtocol {
-    private var dffGate: DFF16
-    var load: Bit
-    var preOut: Bit16
+    private var dffGate: DFF16 = DFF16(Bit16.allZero)
+    var load: Bit = .init(false)
+    var preOut: Bit16 = Bit16.allZero
     
-    init(dff: DFF16 = DFF16(Bit16.allZero), load: Bit = .init(false), _ initialValue: Bit16 = Bit16.allZero) {
-        dffGate = dff
-        self.load = load
-        preOut = initialValue
-    }
-
     mutating func output(in: Bit16, load: Bit) -> Bit16 {
         let out = MultiGate.mux16(a: preOut, b: dffGate.dff(`in`), sel: self.load)
 
