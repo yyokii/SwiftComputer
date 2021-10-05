@@ -97,6 +97,74 @@ public struct Bit8: BitRepresentable, Equatable {
     }
 }
 
+public struct Bit9: BitRepresentable, Equatable {
+    var values: (Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit)
+    
+    public init(_ bits: (Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit)) {
+        values = bits
+    }
+    
+    public static func == (lhs: Bit9, rhs: Bit9) -> Bool {
+        lhs.values.0 == rhs.values.0
+        && lhs.values.1 == rhs.values.1
+        && lhs.values.2 == rhs.values.2
+        && lhs.values.3 == rhs.values.3
+        && lhs.values.4 == rhs.values.4
+        && lhs.values.5 == rhs.values.5
+        && lhs.values.6 == rhs.values.6
+        && lhs.values.7 == rhs.values.7
+        && lhs.values.8 == rhs.values.8
+    }
+}
+
+public struct Bit12: BitRepresentable, Equatable {
+    var values: (Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit)
+    
+    public init(_ bits: (Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit)) {
+        values = bits
+    }
+    
+    public static func == (lhs: Bit12, rhs: Bit12) -> Bool {
+        lhs.values.0 == rhs.values.0
+        && lhs.values.1 == rhs.values.1
+        && lhs.values.2 == rhs.values.2
+        && lhs.values.3 == rhs.values.3
+        && lhs.values.4 == rhs.values.4
+        && lhs.values.5 == rhs.values.5
+        && lhs.values.6 == rhs.values.6
+        && lhs.values.7 == rhs.values.7
+        && lhs.values.8 == rhs.values.8
+        && lhs.values.9 == rhs.values.9
+        && lhs.values.10 == rhs.values.10
+        && lhs.values.11 == rhs.values.11
+    }
+}
+
+public struct Bit14: BitRepresentable, Equatable {
+    var values: (Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit)
+    
+    public init(_ bits: (Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit)) {
+        values = bits
+    }
+    
+    public static func == (lhs: Bit14, rhs: Bit14) -> Bool {
+        lhs.values.0 == rhs.values.0
+        && lhs.values.1 == rhs.values.1
+        && lhs.values.2 == rhs.values.2
+        && lhs.values.3 == rhs.values.3
+        && lhs.values.4 == rhs.values.4
+        && lhs.values.5 == rhs.values.5
+        && lhs.values.6 == rhs.values.6
+        && lhs.values.7 == rhs.values.7
+        && lhs.values.8 == rhs.values.8
+        && lhs.values.9 == rhs.values.9
+        && lhs.values.10 == rhs.values.10
+        && lhs.values.11 == rhs.values.11
+        && lhs.values.12 == rhs.values.12
+        && lhs.values.13 == rhs.values.13
+    }
+}
+
 public struct Bit16: BitRepresentable, Equatable {
     var values: (Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit)
     
