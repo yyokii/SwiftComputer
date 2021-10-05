@@ -5,16 +5,6 @@
 //  Created by Higashihara Yoki on 2021/10/01.
 //
 
-public protocol GateProtocol {
-    static func nand(a: Bit, b: Bit) -> Bit
-    static func not(a: Bit) -> Bit
-    static func and(a: Bit, b: Bit) -> Bit
-    static func or(a: Bit, b: Bit) -> Bit
-    static func xor(a: Bit, b: Bit) -> Bit
-    static func mux(a: Bit, b: Bit, sel: Bit) -> Bit
-    static func dmux(a: Bit, sel: Bit) -> [Bit]
-}
-
 public struct Gate {
     public static func nand(a: Bit, b: Bit) -> Bit {
         .init(!(a.value && b.value))

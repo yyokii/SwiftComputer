@@ -5,31 +5,9 @@
 //  Created by Higashihara Yoki on 2021/10/01.
 //
 
-public protocol MultiGateProtocol {
-    static func not16(a: Bit16) -> Bit16
-    static func and16(a: Bit16, b: Bit16) -> Bit16
-    static func or16(a: Bit16, b: Bit16) -> Bit16
-    static func mux16(a: Bit16, b: Bit16, sel: Bit) -> Bit16
-    static func or8way(a: Bit8) -> Bit
-    static func mux4Way16(a: Bit16,
-                          b: Bit16,
-                          c: Bit16,
-                          d: Bit16,
-                          sel: Bit2) -> Bit16
-    static func mux8Way16(a: Bit16,
-                          b: Bit16,
-                          c: Bit16,
-                          d: Bit16,
-                          e: Bit16,
-                          f: Bit16,
-                          g: Bit16,
-                          h: Bit16,
-                          sel: Bit3) -> Bit16
-    static func dmux4way(a: Bit, sel: Bit2) -> Bit4
-    static func dmux8way(a: Bit, sel: Bit3) -> Bit8
-}
+#warning("naming Gate16 is more correct?")
 
-public struct MultiGate: MultiGateProtocol {
+public struct MultiGate {
     public static func not16(a: Bit16) -> Bit16 {
         .init((Gate.not(a: a.values.0),
                Gate.not(a: a.values.1),
