@@ -11,8 +11,8 @@ import XCTest
 final class RAMTests: XCTestCase {
     
     func testRAM8_WhenInputIsAllZeroOrAllOne() {
-        #warning("他のアドレスもテストする")
-        let address: Bit3 = .init((.init(false), .init(false), .init(false)))
+        let address: Bit3 = .init((.random(), .random(), .random()))
+
         
         XCTContext.runActivity(named: "input(t-1): allZero") { _ in
             XCTContext.runActivity(named: "load(t-1): 0") { _ in
