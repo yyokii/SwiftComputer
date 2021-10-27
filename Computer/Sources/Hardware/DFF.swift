@@ -12,6 +12,7 @@ protocol DFFProtocol {
     mutating func dff(_ input: B) -> B
 }
 
+/// 1つ前の値を入力を出力するゲート
 struct DFF: DFFProtocol {
     var `in`: Bit
     

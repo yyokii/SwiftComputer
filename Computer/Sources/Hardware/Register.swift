@@ -13,6 +13,7 @@ protocol RegisterProtocol {
     mutating func output(in: B, load: Bit) -> B
 }
 
+///　値の読み書きが可能な回路
 struct Register: RegisterProtocol {
     var dffGate: DFF = DFF(.init(false))
     var load: Bit = .init(false)
