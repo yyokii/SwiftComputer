@@ -9,10 +9,10 @@ struct ProgramCounter {
     private var register16: Register16 = Register16()
     
     mutating func output(`in`: Bit16, inc: Bit, load: Bit, reset: Bit) -> Bit16 {
-        let preOut: Bit16 = register16.output(in: `in`, load: .init(false))
+        let preValue: Bit16 = register16.output(in: `in`, load: .init(false))
         
-        let val = MultiGate.mux8Way16(a: preOut,
-                                      b: Adder.inc16(a: preOut),
+        let val = MultiGate.mux8Way16(a: preValue,
+                                      b: Adder.inc16(a: preValue),
                                       c: `in`,
                                       d: `in`,
                                       e: Bit16.allZero,
