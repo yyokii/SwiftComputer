@@ -10,15 +10,15 @@ import XCTest
 @testable import Software
 
 final class InstructionTests: XCTestCase {
-    func testAddressInstitution_WhenInputIsNum() {
+    func testAddressInstruction_WhenInputIsNum() {
         XCTContext.runActivity(named: "input: 0") { _ in
             // Given
             let num = 0
             let line = "@\(num)"
             
             // When
-            let institution: Instruction = .address(text: line)
-            let result = institution.parse()
+            let instruction: Instruction = .address(text: line)
+            let result = instruction.parse()
             let expectation = "0000000000000000"
             
             // Then
@@ -31,8 +31,8 @@ final class InstructionTests: XCTestCase {
             let line = "@\(num)"
             
             // When
-            let institution: Instruction = .address(text: line)
-            let result = institution.parse()
+            let instruction: Instruction = .address(text: line)
+            let result = instruction.parse()
             let expectation = "0000000000001010"
             
             // Then
@@ -45,8 +45,8 @@ final class InstructionTests: XCTestCase {
             let line = "@\(num)"
             
             // When
-            let institution: Instruction = .address(text: line)
-            let result = institution.parse()
+            let instruction: Instruction = .address(text: line)
+            let result = instruction.parse()
             let expectation = "0000000001100100"
             
             // Then
@@ -59,8 +59,8 @@ final class InstructionTests: XCTestCase {
             let line = "@\(num)"
             
             // When
-            let institution: Instruction = .address(text: line)
-            let result = institution.parse()
+            let instruction: Instruction = .address(text: line)
+            let result = instruction.parse()
             let expectation = "0000001111101000"
             
             // Then
@@ -73,8 +73,8 @@ final class InstructionTests: XCTestCase {
             let line = "@\(num)"
             
             // When
-            let institution: Instruction = .address(text: line)
-            let result = institution.parse()
+            let instruction: Instruction = .address(text: line)
+            let result = instruction.parse()
             let expectation = "0010011100010000"
             
             // Then
@@ -87,8 +87,8 @@ final class InstructionTests: XCTestCase {
             let line = "@\(num)"
             
             // When
-            let institution: Instruction = .address(text: line)
-            let result = institution.parse()
+            let instruction: Instruction = .address(text: line)
+            let result = instruction.parse()
             let expectation = "0111111111111111"
             
             // Then
