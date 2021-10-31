@@ -46,7 +46,7 @@ struct Adder16 {
         return Bit16((add1.sum, add2.sum, add3.sum, add4.sum, add5.sum, add6.sum, add7.sum, add8.sum, add9.sum, add10.sum, add11.sum, add12.sum, add13.sum, add14.sum, add15.sum, add16.sum))
     }
     
-    static func inc16(a: Bit16) -> Bit16 {
+    static func inc(a: Bit16) -> Bit16 {
         add(a: a, b: Bit16.one)
     }
 }

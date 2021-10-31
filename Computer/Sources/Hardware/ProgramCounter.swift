@@ -12,7 +12,7 @@ struct ProgramCounter {
         let preValue: Bit16 = register16.output(in: `in`, load: .init(false))
         
         let val = MultiGate.mux8Way16(a: preValue,
-                                      b: Adder16.inc16(a: preValue),
+                                      b: Adder16.inc(a: preValue),
                                       c: `in`,
                                       d: `in`,
                                       e: Bit16.allZero,
