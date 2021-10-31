@@ -35,6 +35,6 @@ public struct ALU: ALUProtocol  {
     }
     
     static func selectFunction(a: Bit16, b: Bit16, control: Bit) -> Bit16 {
-        MultiGate.mux16(a: MultiGate.and16(a: a, b: b), b: Adder.add16(a: a, b: b), sel: control)
+        MultiGate.mux16(a: MultiGate.and16(a: a, b: b), b: Adder16.add(a: a, b: b), sel: control)
     }
 }
