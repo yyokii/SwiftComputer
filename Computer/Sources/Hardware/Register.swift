@@ -34,6 +34,7 @@ struct Register16: RegisterProtocol {
     var load: Bit = .init(false)
     var preOut: Bit16 = Bit16.allZero
     
+    @discardableResult
     mutating func output(in: Bit16, load: Bit) -> Bit16 {
         let out = MultiGate.mux16(a: preOut, b: dffGate.dff(`in`), sel: self.load)
 

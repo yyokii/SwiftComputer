@@ -78,6 +78,24 @@ public struct Bit6: BitRepresentable, Equatable {
     }
 }
 
+public struct Bit7: BitRepresentable, Equatable {
+    var values: (Bit, Bit, Bit, Bit, Bit, Bit, Bit)
+    
+    public init(_ bits: (Bit, Bit, Bit, Bit, Bit, Bit, Bit)) {
+        values = bits
+    }
+    
+    public static func == (lhs: Bit7, rhs: Bit7) -> Bool {
+        lhs.values.0 == rhs.values.0
+        && lhs.values.1 == rhs.values.1
+        && lhs.values.2 == rhs.values.2
+        && lhs.values.3 == rhs.values.3
+        && lhs.values.4 == rhs.values.4
+        && lhs.values.5 == rhs.values.5
+        && lhs.values.6 == rhs.values.6
+    }
+}
+
 public struct Bit8: BitRepresentable, Equatable {
     var values: (Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit)
     
@@ -233,6 +251,17 @@ public struct Bit16: BitRepresentable, Equatable {
     }
 }
 
+extension Bit15 {
+    static let one: Self = .init((Bit.init(true), Bit.init(false), Bit.init(false), Bit.init(false),
+                                  Bit.init(false),Bit.init(false), Bit.init(false), Bit.init(false),
+                                  Bit.init(false), Bit.init(false),Bit.init(false), Bit.init(false),
+                                  Bit.init(false), Bit.init(false), Bit.init(false)))
+    
+    static let allZero: Bit15 = .init((Bit.init(false), Bit.init(false), Bit.init(false), Bit.init(false),
+                                Bit.init(false), Bit.init(false), Bit.init(false), Bit.init(false),
+                                Bit.init(false), Bit.init(false),Bit.init(false), Bit.init(false),
+                                Bit.init(false), Bit.init(false), Bit.init(false)))
+}
 
 extension Bit16 {
     static let one: Self = .init((Bit.init(true), Bit.init(false), Bit.init(false), Bit.init(false),
