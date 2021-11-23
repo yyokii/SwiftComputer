@@ -30,7 +30,7 @@ final class CPUTests: XCTestCase {
         return binary.zeroPadding(toSize: 16)
     }
     
-    func test01() {
+    func test01_Copy_from_CPU_external_cmp_file() {
         let cpu = CPU()
         
         let result0 = cpu.output(inM: .allZero, instruction: .make(from: "0011000000111001"), reset: .init(false))
