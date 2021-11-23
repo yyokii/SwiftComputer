@@ -1,6 +1,6 @@
 # SwiftComputer
 
-This is a swift implementation of [nand2tetris](https://www.nand2tetris.org/)
+This is a Swift implementation of [nand2tetris](https://www.nand2tetris.org/)
 
 ## Progress
 
