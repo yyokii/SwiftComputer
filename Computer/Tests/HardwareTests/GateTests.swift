@@ -267,7 +267,7 @@ final class GateTests: XCTestCase {
             let a: Bit = .init(false)
             let sel: Bit = .init(false)
             let result = Gate.dmux(a: a, sel: sel)
-            let expectation: [Bit] = [a, .init(false)]
+            let expectation: Bit2 = .init((a, .init(false)))
                         
             XCTAssertEqual(result, expectation)
         }
@@ -276,7 +276,7 @@ final class GateTests: XCTestCase {
             let a: Bit = .init(false)
             let sel: Bit = .init(true)
             let result = Gate.dmux(a: a, sel: sel)
-            let expectation: [Bit] = [.init(false), a]
+            let expectation: Bit2 = .init((.init(false), a))
                         
             XCTAssertEqual(result, expectation)
         }
@@ -285,7 +285,7 @@ final class GateTests: XCTestCase {
             let a: Bit = .init(true)
             let sel: Bit = .init(false)
             let result = Gate.dmux(a: a, sel: sel)
-            let expectation: [Bit] = [a, .init(false)]
+            let expectation: Bit2 = .init((a, .init(false)))
                         
             XCTAssertEqual(result, expectation)
         }
@@ -294,7 +294,7 @@ final class GateTests: XCTestCase {
             let a: Bit = .init(true)
             let sel: Bit = .init(true)
             let result = Gate.dmux(a: a, sel: sel)
-            let expectation: [Bit] = [.init(false), a]
+            let expectation: Bit2 = .init((.init(false), a))
                         
             XCTAssertEqual(result, expectation)
         }

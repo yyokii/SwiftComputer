@@ -30,7 +30,7 @@ public struct Gate {
         or(a: and(a: a, b: not(a: sel)), b: and(a: b, b: sel))
     }
 
-    public static func dmux(a: Bit, sel: Bit) -> [Bit] {
-        [and(a: a, b: not(a: sel)), and(a: a, b: sel)]
+    public static func dmux(a: Bit, sel: Bit) -> Bit2 {
+        .init((and(a: a, b: not(a: sel)), and(a: a, b: sel)))
     }
 }
